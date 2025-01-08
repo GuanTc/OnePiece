@@ -1,7 +1,8 @@
 # Spring Doc
-https://docs.spring.io/spring-boot/reference/features/logging.html#features.logging
-https://www.slf4j.org/manual.html
-https://logback.qos.ch/
+* https://docs.spring.io/spring-boot/reference/features/logging.html#features.logging
+* https://www.slf4j.org/manual.html
+* https://logback.qos.ch/
+
 ## Default logging provider
 LogBack
 
