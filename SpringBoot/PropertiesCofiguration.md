@@ -26,9 +26,11 @@ my.service.security.roles=USER,ADMIN
 ```
   * JavaBean properties binding
 ```java
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.annotation.Validated;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -37,18 +39,23 @@ import java.util.List;
 @Component
 @Data
 @ConfigurationProperties("my.service")
+@Validated
 public class JavaBeanPropertiesBinding {
-private boolean enabled;
-private String remoteAddress;
-private final Security security = new Security();
+  private boolean enabled;
+  @NotNull
+  private String remoteAddress;
+  private final Security security = new Security();
 
-    @Data
-    public static class Security {
-        private String username;
-        private String password;
-        private List<String> roles = new ArrayList<>(Collections.singleton("USER"));
-    }
+  @Data
+  public static class Security {
+    private String username;
+    private String password;
+    private List<String> roles = new ArrayList<>(Collections.singleton("USER"));
+  }
 }
+```
+```gradle
+implementation 'jakarta.validation:jakarta.validation-api'
 ```
   * Constructor binding
 ```java
