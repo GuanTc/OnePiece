@@ -80,6 +80,7 @@
 - [CNCF 可观测性白皮书](https://www.cncf.io/reports/cloud-native-observability/)
 
 ---
+AI Study: https://yuanbao.tencent.com/bot/app/share/chat/1mUgBvkz9Lbf
 ```mermaid
 graph LR
   A[Application] -->|自动埋点| B(OpenTelemetry Agent)
